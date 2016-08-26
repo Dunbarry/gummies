@@ -1,4 +1,3 @@
-console.log("Drone online");
 
 
 var picTest=0;
@@ -50,15 +49,12 @@ function curtainON(){
 function picDelay(){
   $('#imgInsert').attr('src', ""+pics[rng]+"");
   $('#YES').text(""+words[rngT]+"")
-  $('#NO').text("I was so wrong...")
 }
 
 $(document).on('click', '#YES', function(){
   curtainON();
   randomPic();
-  console.log("<~~ "+picTest,rng);
   if((picTest-0)===(rng-0)){
-    console.log("They Match!")
     if(rng===12){
       rng=0;
     }
