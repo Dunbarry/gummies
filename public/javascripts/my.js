@@ -23,6 +23,7 @@ var words=[
   "Hit me!"
 ]
 
+
 function randomPic(){
   rng=(Math.floor(Math.random()*10))
   console.log(rng)
@@ -33,12 +34,29 @@ function randomText(){
   console.log(rngT)
 }
 
+function curtainOFF(){
+  $('.curtain').removeClass('curtainClose');
+}
+
+function curtainON(){
+  $('.curtain').addClass('curtainClose');
+  setTimeout(curtainOFF,4100)
+}
+
+function picDelay(){
+  $('#imgInsert').attr('src', ""+pics[rng]+"");
+  $('#YES').text(""+words[rngT]+"")
+  $('#NO').text("I was so wrong...")
+}
+
 $(document).on('click', '#YES', function(){
+  curtainON();
   randomPic();
   randomText();
   console.log(pics[rng])
   console.log(words[rngT])
-  $('#imgInsert').attr('src', ""+pics[rng]+"");
-  $('#YES').text(""+words[rngT]+"")
-  $('#NO').text("I was so wrong...")
+  // $('#imgInsert').attr('src', ""+pics[rng]+"");
+  // $('#YES').text(""+words[rngT]+"")
+  // $('#NO').text("I was so wrong...")
+  setTimeout(picDelay,2000);
 })

@@ -7,22 +7,51 @@ a {
   color: #00B7FF;
 }
 
+/*button{
+  width:7vw;
+}*/
+
 .container{
   display:flex;
   justify-content: space-between;
-  width: 39.05vw;
+  width: 35.05vw;
 }
 
 .picHolder{
-  height:40vw;
-  width:40vw;
+  height:35vw;
+  width:35vw;
+  background-color: yellow;
+}
+
+.curtain{
+  position:absolute;
+  height:35vw;
+  width:35vw;
+  margin-left: 35vw;
+  top:26.15%;
+  background-color: grey;
+  z-index: 10;
 }
 
 #imgInsert{
+  position:relative;
   max-width: 100%;
   max-height:100%;
+  z-index: 1;
 }
 
-/*button{
-  color: blue;
-}*/
+/*Curtain control*/
+@-webkit-keyframes curtainClose{
+    0% { -webkit-transform: translate(0vw, 0vw); }
+  	50% { -webkit-transform: translate(-35vw, 0vw); }
+    100% { -webkit-transform: translate(0vw, 0vw); }
+}
+
+.curtainClose{
+  -webkit-animation-name: curtainClose;
+  -webkit-animation-duration: 4s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode:forwards;
+}
